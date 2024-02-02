@@ -1,0 +1,27 @@
+[gd_scene load_steps=2 format=3 uid="uid://cs8bjntjukie3"]
+
+[ext_resource type="Script" path="res://SoundEffectPlayer.gd" id="1_451cv"]
+
+[node name="SoundEffectPlayer" type="Node"]
+process_mode = 3
+script = ExtResource("1_451cv")
+
+[node name="Sound" type="AudioStreamPlayer" parent="."]
+volume_db = -8.0
+
+[node name="GoldSound" type="AudioStreamPlayer" parent="."]
+
+[node name="LavaSound" type="AudioStreamPlayer" parent="."]
+volume_db = -10.0
+
+[node name="ExplosionSound" type="AudioStreamPlayer" parent="."]
+volume_db = -17.0
+
+[node name="FireSound" type="AudioStreamPlayer" parent="."]
+volume_db = -5.0
+
+[node name="SetBuilding" type="AudioStreamPlayer" parent="."]
+volume_db = -15.0
+
+[node name="ErrorSound" type="AudioStreamPlayer" parent="."]
+volume_db = -2.0

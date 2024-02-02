@@ -1,0 +1,71 @@
+[gd_scene load_steps=4 format=3 uid="uid://s6hfs6enn4qt"]
+
+[ext_resource type="Script" path="res://scripts/your_score_view.gd" id="1_smk0b"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_2iuag"]
+font_size = 40
+outline_size = 4
+
+[sub_resource type="LabelSettings" id="LabelSettings_juci2"]
+font_size = 30
+outline_size = 2
+shadow_size = 0
+
+[node name="Control" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_smk0b")
+
+[node name="ScoreLable" type="Label" parent="."]
+layout_mode = 0
+offset_top = 85.0
+offset_right = 1152.0
+offset_bottom = 195.0
+text = "Your Score: 123"
+label_settings = SubResource("LabelSettings_2iuag")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PlayerName" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 340.0
+offset_top = 415.0
+offset_right = 646.0
+offset_bottom = 459.0
+placeholder_text = "Player Name"
+max_length = 15
+
+[node name="Submit" type="Button" parent="."]
+layout_mode = 0
+offset_left = 651.0
+offset_top = 415.0
+offset_right = 819.0
+offset_bottom = 458.0
+text = "SUBMIT SCORE"
+
+[node name="ToLeaderboard" type="Button" parent="."]
+layout_mode = 0
+offset_left = 408.0
+offset_top = 530.0
+offset_right = 736.0
+offset_bottom = 593.0
+text = "
+"
+
+[node name="Label" type="Label" parent="ToLeaderboard"]
+layout_mode = 0
+offset_top = 1.0
+offset_right = 328.0
+offset_bottom = 64.0
+text = "To Leaderboard"
+label_settings = SubResource("LabelSettings_juci2")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="Submit" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="ToLeaderboard" to="." method="_on_to_leaderboard_pressed"]

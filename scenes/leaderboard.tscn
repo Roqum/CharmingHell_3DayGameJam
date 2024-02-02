@@ -1,0 +1,100 @@
+[gd_scene load_steps=6 format=3 uid="uid://82bjg5r2watk"]
+
+[ext_resource type="Script" path="res://scripts/leaderboard.gd" id="1_tftjh"]
+[ext_resource type="LabelSettings" uid="uid://bk5mb0mwr18l1" path="res://assets/score_label_setting.tres" id="2_shoqr"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_c6sa6"]
+font_size = 50
+
+[sub_resource type="LabelSettings" id="LabelSettings_uwos1"]
+font_size = 30
+
+[sub_resource type="LabelSettings" id="LabelSettings_12t5r"]
+font_size = 22
+outline_size = 1
+
+[node name="Leaderboard" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+script = ExtResource("1_tftjh")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 307.0
+offset_top = 174.0
+offset_right = 842.0
+offset_bottom = 566.0
+
+[node name="Names" type="GridContainer" parent="Panel"]
+layout_mode = 0
+offset_left = 101.0
+offset_top = 8.0
+offset_right = 378.0
+offset_bottom = 384.0
+
+[node name="Scores" type="GridContainer" parent="Panel"]
+layout_mode = 0
+offset_left = 371.0
+offset_top = 9.0
+offset_right = 499.0
+offset_bottom = 380.0
+
+[node name="Placement" type="GridContainer" parent="Panel"]
+layout_mode = 0
+offset_left = 34.0
+offset_top = 8.0
+offset_right = 84.0
+offset_bottom = 383.0
+
+[node name="LoadingScores" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 28.0
+offset_right = 535.0
+offset_bottom = 102.0
+text = "Loading scores..."
+label_settings = ExtResource("2_shoqr")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Header" type="Label" parent="."]
+layout_mode = 0
+offset_top = 35.0
+offset_right = 1151.0
+offset_bottom = 104.0
+text = "Leaderboard"
+label_settings = SubResource("LabelSettings_c6sa6")
+horizontal_alignment = 1
+
+[node name="YourPlace" type="Label" parent="."]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 100.0
+offset_right = 1153.0
+offset_bottom = 164.0
+text = "Your Placement: loading..."
+label_settings = SubResource("LabelSettings_uwos1")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="."]
+process_mode = 3
+layout_mode = 0
+offset_left = 424.0
+offset_top = 582.0
+offset_right = 717.0
+offset_bottom = 632.0
+
+[node name="Label" type="Label" parent="Button"]
+layout_mode = 0
+offset_right = 292.0
+offset_bottom = 49.0
+text = "BACK TO MENU"
+label_settings = SubResource("LabelSettings_12t5r")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
